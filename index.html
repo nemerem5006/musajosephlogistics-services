@@ -35,7 +35,7 @@
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
             <a href="/index.html" class="text-2xl font-bold text-blue-600">MusaJ<span class="text-orange-500">Logistics</span></a>
             <div class="hidden md:flex space-x-4">
-                <a href="/index.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                <a href="/index.html" class="text-blue-600 border-b-2 border-blue-600 px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</a>
                 <a href="/services.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Services</a>
                 <a href="/about.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">About Us</a>
                 <a href="/tracking.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Track Shipment</a>
@@ -43,16 +43,18 @@
             </div>
             <!-- Mobile Menu Button -->
             <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+                <button id="mobile-menu-button" class="text-gray-600 hover:text-blue-600 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        <path id="icon-hamburger" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        <path id="icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
             </div>
         </nav>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
-            <a href="/index.html" class="block text-gray-600 hover:bg-blue-50 hover:text-blue-600 px-4 py-2 text-sm">Home</a>
+            <a href="/index.html" class="block text-blue-600 bg-blue-50 px-4 py-2 text-sm font-semibold" aria-current="page">Home</a>
             <a href="/services.html" class="block text-gray-600 hover:bg-blue-50 hover:text-blue-600 px-4 py-2 text-sm">Services</a>
             <a href="/about.html" class="block text-gray-600 hover:bg-blue-50 hover:text-blue-600 px-4 py-2 text-sm">About Us</a>
             <a href="/tracking.html" class="block text-gray-600 hover:bg-blue-50 hover:text-blue-600 px-4 py-2 text-sm">Track Shipment</a>
@@ -148,6 +150,52 @@
             </div>
         </section>
 
+        <!-- Partners Carousel -->
+        <section id="partners-carousel-section" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Trusted Partners</h2>
+                <div class="relative">
+                    <!-- Carousel Wrapper -->
+                    <div id="partners-carousel-wrapper" class="overflow-hidden">
+                        <!-- Carousel Track -->
+                        <div id="partners-carousel-track" class="flex">
+                            <!-- Slides -->
+                            <div class="flex-shrink-0 w-1/2 md:w-1/4 lg:w-1/6 p-4">
+                                <img src="https://via.placeholder.com/200x100/cbd5e1/475569?text=Partner+A" alt="Partner A Logo" class="mx-auto h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                            </div>
+                            <div class="flex-shrink-0 w-1/2 md:w-1/4 lg:w-1/6 p-4">
+                                <img src="https://via.placeholder.com/200x100/cbd5e1/475569?text=Partner+B" alt="Partner B Logo" class="mx-auto h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                            </div>
+                            <div class="flex-shrink-0 w-1/2 md:w-1/4 lg:w-1/6 p-4">
+                                <img src="https://via.placeholder.com/200x100/cbd5e1/475569?text=Partner+C" alt="Partner C Logo" class="mx-auto h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                            </div>
+                            <div class="flex-shrink-0 w-1/2 md:w-1/4 lg:w-1/6 p-4">
+                                <img src="https://via.placeholder.com/200x100/cbd5e1/475569?text=Partner+D" alt="Partner D Logo" class="mx-auto h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                            </div>
+                            <div class="flex-shrink-0 w-1/2 md:w-1/4 lg:w-1/6 p-4">
+                                <img src="https://via.placeholder.com/200x100/cbd5e1/475569?text=Partner+E" alt="Partner E Logo" class="mx-auto h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                            </div>
+                            <div class="flex-shrink-0 w-1/2 md:w-1/4 lg:w-1/6 p-4">
+                                <img src="https://via.placeholder.com/200x100/cbd5e1/475569?text=Partner+F" alt="Partner F Logo" class="mx-auto h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                            </div>
+                            <div class="flex-shrink-0 w-1/2 md:w-1/4 lg:w-1/6 p-4">
+                                <img src="https://via.placeholder.com/200x100/cbd5e1/475569?text=Partner+G" alt="Partner G Logo" class="mx-auto h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                            </div>
+                            <div class="flex-shrink-0 w-1/2 md:w-1/4 lg:w-1/6 p-4">
+                                <img src="https://via.placeholder.com/200x100/cbd5e1/475569?text=Partner+H" alt="Partner H Logo" class="mx-auto h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Navigation -->
+                    <button id="partners-prev" class="absolute top-1/2 -left-4 -translate-y-1/2 bg-white shadow-md rounded-full p-2 text-gray-600 hover:bg-gray-200 z-10 disabled:opacity-50 disabled:cursor-not-allowed">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                    </button>
+                    <button id="partners-next" class="absolute top-1/2 -right-4 -translate-y-1/2 bg-white shadow-md rounded-full p-2 text-gray-600 hover:bg-gray-200 z-10 disabled:opacity-50 disabled:cursor-not-allowed">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -185,6 +233,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 
     <!--Start of Tawk.to Script-->
 <script type="text/javascript">
