@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/MJ-Teams.jpg" type="image/x-icon">
+    <title>MusaJLogistics - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Basic smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* animation for hero text */
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="/index.html" class="text-2xl font-bold text-blue-600">MusaJ<span class="text-orange-500">Logistics</span></a>
+            <div class="hidden md:flex space-x-4">
+                <a href="/index.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                <a href="/services.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                <a href="/about.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">About Us</a>
+                <a href="/tracking.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Track Shipment</a>
+                <a href="/contact.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+            <a href="/index.html" class="block text-gray-600 hover:bg-blue-50 hover:text-blue-600 px-4 py-2 text-sm">Home</a>
+            <a href="/services.html" class="block text-gray-600 hover:bg-blue-50 hover:text-blue-600 px-4 py-2 text-sm">Services</a>
+            <a href="/about.html" class="block text-gray-600 hover:bg-blue-50 hover:text-blue-600 px-4 py-2 text-sm">About Us</a>
+            <a href="/tracking.html" class="block text-gray-600 hover:bg-blue-50 hover:text-blue-600 px-4 py-2 text-sm">Track Shipment</a>
+            <a href="/contact.html" class="block text-gray-600 hover:bg-blue-50 hover:text-blue-600 px-4 py-2 text-sm">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section with Carousel -->
+        <section id="hero-carousel-section" class="relative w-full h-[60vh] md:h-[85vh] lg:h-screen overflow-hidden">
+            <!-- Carousel Slides Container -->
+            <div id="hero-carousel">
+                <!-- Slide 1 -->
+                <div class="hero-slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0">
+                    <img src="./images/Cargo ship on the ocean.jpg" alt="Cargo ship on the ocean" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                        <div class="text-center text-white px-6">
+                            <h1 class="text-4xl md:text-6xl font-bold mb-4 fade-in-up">Global Freight Solutions</h1>
+                            <p class="text-lg md:text-xl mb-8 fade-in-up" style="animation-delay: 0.2s;">Connecting your business to the world with reliable sea and air freight.</p>
+                            <a href="/services.html" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105 fade-in-up" style="animation-delay: 0.4s;">Discover More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="hero-slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0">
+                    <img src="./images/Warehouse with packages.jpg" alt="Warehouse with packages" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                        <div class="text-center text-white px-6">
+                            <h1 class="text-4xl md:text-6xl font-bold mb-4 fade-in-up">Advanced Warehousing</h1>
+                            <p class="text-lg md:text-xl mb-8 fade-in-up" style="animation-delay: 0.2s;">Secure, scalable, and smart storage solutions for your inventory.</p>
+                            <a href="/services.html" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105 fade-in-up" style="animation-delay: 0.4s;">Our Facilities</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="hero-slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0">
+                    <img src="./images/Truck on a highway.jpg" alt="Truck on a highway" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                        <div class="text-center text-white px-6">
+                            <h1 class="text-4xl md:text-6xl font-bold mb-4 fade-in-up">Nationwide Ground Transport</h1>
+                            <p class="text-lg md:text-xl mb-8 fade-in-up" style="animation-delay: 0.2s;">Fast and efficient delivery across the country, right to your doorstep.</p>
+                            <a href="/contact.html" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105 fade-in-up" style="animation-delay: 0.4s;">Get a Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Navigation -->
+            <button id="hero-prev" class="absolute top-1/2 left-4 md:left-8 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-3 rounded-full z-20 transition-colors duration-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+            </button>
+            <button id="hero-next" class="absolute top-1/2 right-4 md:right-8 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-3 rounded-full z-20 transition-colors duration-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+            </button>
+
+            <!-- Pagination Dots -->
+            <div id="hero-dots" class="absolute bottom-5 left-1/2 -translate-x-1/2 flex space-x-3 z-20">
+                <!-- Dots will be generated by JS -->
+            </div>
+        </section>
+
+        <!-- Services Overview -->
+        <section id="services-overview" class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">What We Offer</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-blue-500 mb-4 text-4xl"><i class="fas fa-truck-fast"></i></div>
+                        <h3 class="text-xl font-semibold mb-3">Freight Forwarding</h3>
+                        <p class="text-gray-600">Efficient and cost-effective freight solutions by air, sea, and land.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-blue-500 mb-4 text-4xl"><i class="fas fa-warehouse"></i></div>
+                        <h3 class="text-xl font-semibold mb-3">Warehousing</h3>
+                        <p class="text-gray-600">Secure and flexible warehousing options to meet your storage needs.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-blue-500 mb-4 text-4xl"><i class="fas fa-box-open"></i></div>
+                        <h3 class="text-xl font-semibold mb-3">Customs Clearance</h3>
+                        <p class="text-gray-600">Hassle-free customs brokerage services for smooth import/export.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="bg-gray-200 py-16">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">Ready to Optimize Your Logistics?</h2>
+                <p class="text-gray-700 mb-8">Contact us today for a personalized quote and expert advice.</p>
+                <a href="/contact.html" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300 ease-in-out transform hover:scale-105">Get a Quote</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-3">MusaJ<span class="text-orange-500">Logistics</span></h3>
+                    <p class="text-gray-400">Delivering excellence in logistics and supply chain management worldwide.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-3">Quick Links</h4>
+                    <ul>
+                        <li><a href="/about.html" class="text-gray-400 hover:text-orange-500">About Us</a></li>
+                        <li><a href="/services.html" class="text-gray-400 hover:text-orange-500">Services</a></li>
+                        <li><a href="/tracking.html" class="text-gray-400 hover:text-orange-500">Track Shipment</a></li>
+                        <li><a href="/contact.html" class="text-gray-400 hover:text-orange-500">Contact Us</a></li>
+                        <li><a href="/privacy.html" class="text-gray-400 hover:text-orange-500">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-3">Contact Us</h4>
+                    <p class="text-gray-400">9, PO Box 7155, Damascus · Maysat Square Al Rasafi Street Bldg.</p>
+                    <p class="text-gray-400">Email: info@logisticspro.com</p>
+                    <p class="text-gray-400">Phone: (123) 456-7890</p>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-orange-500"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-orange-500"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-orange-500"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-gray-500 mt-8 pt-8 border-t border-gray-700">
+                &copy; <span id="currentYear"></span> Musa Joseph. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- Chatbot Widget (Example using a service like Tawk.to) -->
+    <!-- 
+      1. Sign up for a free account at a service like https://www.tawk.to/
+      2. Follow their instructions to get a widget code snippet.
+      3. Replace the entire <script> block below with the one they provide.
+    -->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/YOUR_PROPERTY_ID/YOUR_WIDGET_ID'; // <-- IMPORTANT: Replace with your real script source from the service.
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+</body>
+</html>

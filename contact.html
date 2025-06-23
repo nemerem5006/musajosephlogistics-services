@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/MJ-Teams.jpg" type="image/x-icon">
+    <title>Contact Us - MusaJLogistics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+    <!-- Header (Same as index.html, adjust active link) -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="/index.html" class="text-2xl font-bold text-blue-600">MusaJ<span class="text-orange-500">Logistics</span></a>
+            <div class="hidden md:flex space-x-4">
+                <a href="/index.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                <a href="/services.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                <a href="/about.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">About Us</a>
+                <a href="/tracking.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Track Shipment</a>
+                <a href="/contact.html" class="text-blue-600 border-b-2 border-blue-600 px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+            <a href="/index.html" class="block text-gray-600 hover:bg-blue-50 hover:text-blue-600 px-4 py-2 text-sm">Home</a>
+            <a href="/services.html" class="block text-gray-600 hover:bg-blue-50 hover:text-blue-600 px-4 py-2 text-sm">Services</a>
+            <a href="/about.html" class="block text-gray-600 hover:bg-blue-50 hover:text-blue-600 px-4 py-2 text-sm">About Us</a>
+            <a href="/tracking.html" class="block text-gray-600 hover:bg-blue-50 hover:text-blue-600 px-4 py-2 text-sm">Track Shipment</a>
+            <a href="/contact.html" class="block text-blue-600 bg-blue-50 px-4 py-2 text-sm font-semibold" aria-current="page">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl font-bold text-center text-gray-800 mb-10">Get in Touch</h1>
+            <p class="text-center text-gray-600 mb-12">We're here to help with all your logistics needs. Fill out the form below, or contact us directly.</p>
+
+            <div class="grid md:grid-cols-2 gap-10 bg-white p-8 md:p-12 rounded-lg shadow-xl">
+                <!-- Contact Form -->
+                <div>
+                    <h2 class="text-2xl font-semibold text-blue-600 mb-6">Send Us a Message</h2>
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                            <input type="text" name="name" id="name" required
+                                   class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                            <input type="email" name="email" id="email" required
+                                   class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700">Subject</label>
+                            <input type="text" name="subject" id="subject" required
+                                   class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                            <textarea id="message" name="message" rows="4" required
+                                      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit"
+                                    class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition duration-150 ease-in-out">
+                                Send Message
+                            </button>
+                        </div>
+                         <div id="form-submission-message" class="hidden mt-4 p-3 rounded-md"></div>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <h2 class="text-2xl font-semibold text-blue-600 mb-6">Contact Information</h2>
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-700 flex items-center"><i class="fas fa-map-marker-alt mr-3 text-orange-500"></i> Address</h3>
+                        <p class="text-gray-600 mt-1">9, PO Box 7155, Damascus · Maysat Square Al Rasafi Street Bldg.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-700 flex items-center"><i class="fas fa-phone-alt mr-3 text-orange-500"></i> Phone</h3>
+                        <p class="text-gray-600 mt-1">(123) 456-7890</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-700 flex items-center"><i class="fas fa-envelope mr-3 text-orange-500"></i> Email</h3>
+                        <p class="text-gray-600 mt-1">info@logisticspro.com</p>
+                        <p class="text-gray-600 mt-1">sales@logisticspro.com</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-700">Business Hours</h3>
+                        <p class="text-gray-600 mt-1">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                        <p class="text-gray-600">Saturday: 10:00 AM - 2:00 PM</p>
+                        <p class="text-gray-600">Sunday: Closed</p>
+                    </div>
+                     <div class="mt-6">
+                        <h3 class="text-lg font-medium text-gray-700 mb-2">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-blue-600 text-2xl"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-blue-400 text-2xl"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-blue-700 text-2xl"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-pink-600 text-2xl"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!-- Optional: Map Section -->
+        <div class="mt-12">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Our Location</h2>
+            <div class="aspect-w-16 aspect-h-9 rounded-lg shadow-xl overflow-hidden">
+                <!-- Replace with your actual map embed code -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3354.2809070890507!2d-96.80001968481799!3d32.78306098097079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864e9928b5a0dd19%3A0x5a0b3e0b0b0b0b0b!2sDallas%2C%20TX!5e0!3m2!1sen!2sus!4v1627887875421!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (Same as index.html) -->
+    <footer class="bg-gray-800 text-white py-10 mt-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-3">MusaJ<span class="text-orange-500">Logistics</span></h3>
+                    <p class="text-gray-400">Delivering excellence in logistics and supply chain management worldwide.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-3">Quick Links</h4>
+                    <ul>
+                        <li><a href="/about.html" class="text-gray-400 hover:text-orange-500">About Us</a></li>
+                        <li><a href="/services.html" class="text-gray-400 hover:text-orange-500">Services</a></li>
+                        <li><a href="/tracking.html" class="text-gray-400 hover:text-orange-500">Track Shipment</a></li>
+                        <li><a href="/contact.html" class="text-gray-400 hover:text-orange-500">Contact Us</a></li>
+                        <li><a href="/privacy.html" class="text-gray-400 hover:text-orange-500">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-3">Contact Us</h4>
+                    <p class="text-gray-400">9, PO Box 7155, Damascus · Maysat Square Al Rasafi Street Bldg.</p>
+                    <p class="text-gray-400">Email: info@logisticspro.com</p>
+                    <p class="text-gray-400">Phone: (123) 456-7890</p>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-orange-500"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-orange-500"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-orange-500"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-gray-500 mt-8 pt-8 border-t border-gray-700">
+                &copy; <span id="currentYear"></span> Musa Joseph. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- Chatbot Widget (Example using a service like Tawk.to) -->
+    <!-- 
+      1. Sign up for a free account at a service like https://www.tawk.to/
+      2. Follow their instructions to get a widget code snippet.
+      3. Replace the entire <script> block below with the one they provide.
+    -->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/YOUR_PROPERTY_ID/YOUR_WIDGET_ID'; // <-- IMPORTANT: Replace with your real script source from the service.
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+</body>
+</html>
