@@ -236,12 +236,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-                    formSubmissionMessage.classList.remove('bg-blue-100', 'text-blue-700', 'bg-green-100', 'text-green-700');
-                    formSubmissionMessage.classList.add('bg-red-100', 'text-red-700');
-                    formSubmissionMessage.textContent = 'Failed to send message. Please try again later.';
-                }
-                formSubmissionMessage.classList.remove('hidden'); // Ensure message is visible
-            }, 1500); // Simulate 1.5 seconds delay
-        });
-    }
-});
