@@ -1,66 +1,126 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const API_BASE_URL = 'http://localhost:3000/api';
+document.addEventListener('DOMContentLoaded', function () {
+    // Mobile menu toggle
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-  const trackingForm = document.getElementById('trackingForm');
-  const trackingNumberInput = document.getElementById('trackingNumber');
-  const trackingResultsDiv = document.getElementById('trackingResults');
-  const trackingErrorDiv = document.getElementById('trackingError');
-  const errorMessageSpan = document.getElementById('errorMessage'); // For displaying specific error messages
-  const resultTrackingId = document.getElementById('resultTrackingId');
-  const resultStatus = document.getElementById('resultStatus');
-  const resultLastUpdate = document.getElementById('resultLastUpdate');
-  const resultEstDelivery = document.getElementById('resultEstDelivery');
-  const resultHistory = document.getElementById('resultHistory');
-  const loader = document.getElementById('loader'); // Add a <div id="loader" class="hidden">...</div> to your HTML
+    if (menuButton && mobileMenu) {
+        menuButton.addEventListener('click', function () {
+            mobileMenu.classList.toggle('hidden');
+            // Optional: Change button icon
+            const icon = menuButton.querySelector('svg');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>';
+            } else {
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+            }
+        });
+    }
 
-  if (trackingForm && trackingNumberInput && trackingResultsDiv && trackingErrorDiv && errorMessageSpan &&
-      resultTrackingId && resultStatus && resultLastUpdate && resultEstDelivery && resultHistory && loader) {
+    // Set current year in footer
+    const currentYearSpan = document.getElementById('currentYear');
+    if (currentYearSpan) {
+        currentYearSpan.textContent = new Date().getFullYear();
+    }
 
-    trackingForm.addEventListener('submit', async (event) => {
-      event.preventDefault();
-      const trackingNumber = trackingNumberInput.value.trim().toUpperCase();
+    // Contact Form Submission (Placeholder)
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const messageDiv = document.getElementById('form-submission-message');
+            messageDiv.classList.remove('hidden', 'bg-red-100', 'text-red-700', 'bg-green-100', 'text-green-700');
 
-      // Reset UI state and show loader
-      trackingResultsDiv.classList.add('hidden');
-      trackingErrorDiv.classList.add('hidden');
-      loader.classList.remove('hidden');
+            // Simulate form submission
+            messageDiv.textContent = 'Sending your message...';
+            messageDiv.classList.add('bg-blue-100', 'text-blue-700');
+            messageDiv.classList.remove('hidden');
 
-      try {
-        const response = await fetch(`${API_BASE_URL}/track/${trackingNumber}`);
 
-        if (response.ok) {
-          const data = await response.json();
-          resultTrackingId.textContent = data.id;
-          resultStatus.textContent = data.status;
-          // Format date for better readability
-          resultLastUpdate.textContent = new Date(data.lastUpdate).toLocaleString();
-          resultEstDelivery.textContent = data.estimatedDelivery;
+            setTimeout(() => {
+                // Simulate success
+                messageDiv.textContent = 'Thank you! Your message has been sent successfully.';
+                messageDiv.classList.remove('bg-blue-100', 'text-blue-700');
+                messageDiv.classList.add('bg-green-100', 'text-green-700');
+                contactForm.reset();
 
-          resultHistory.innerHTML = '';
-          data.history.forEach(item => {
-            const li = document.createElement('li');
-            li.textContent = item;
-            resultHistory.appendChild(li);
-          });
+                setTimeout(() => {
+                    messageDiv.classList.add('hidden');
+                }, 5000); // Hide after 5 seconds
 
-          trackingResultsDiv.classList.remove('hidden');
-        } else if (response.status === 404) {
-          errorMessageSpan.textContent = `Tracking number "${trackingNumber}" not found.`;
-          trackingErrorDiv.classList.remove('hidden');
-        } else {
-          // Try to get a more specific error message from the server response
-          const errorData = await response.json().catch(() => ({ message: 'An unknown error occurred.' }));
-          errorMessageSpan.textContent = `Error: ${errorData.message || 'Could not retrieve tracking data.'}`;
-          trackingErrorDiv.classList.remove('hidden');
-        }
-      } catch (error) {
-        console.error('Error fetching tracking data:', error);
-        errorMessageSpan.textContent = 'Network error. Please try again.';
-        trackingErrorDiv.classList.remove('hidden');
-      } finally {
-        // Always hide the loader when the operation is complete
-        loader.classList.add('hidden');
-      }
-    });
-  }
+            }, 2000); // Simulate network delay
+        });
+    }
+
+    // Tracking Form Submission (Placeholder)
+    const trackingForm = document.getElementById('trackingForm');
+    if (trackingForm) {
+        trackingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const trackingNumberInput = document.getElementById('trackingNumber');
+            const trackingResultsDiv = document.getElementById('trackingResults');
+            const trackingErrorDiv = document.getElementById('trackingError');
+            const trackingId = trackingNumberInput.value.trim().toUpperCase();
+
+            // Hide previous results/errors
+            trackingResultsDiv.classList.add('hidden');
+            trackingErrorDiv.classList.add('hidden');
+
+            if (!trackingId) {
+                alert('Please enter a tracking number.');
+                return;
+            }
+
+            // Simulate API call
+            console.log(`Simulating tracking for: ${trackingId}`);
+            // Show a loading state (optional)
+
+            setTimeout(() => {
+                // Mock data - in a real app, this would come from a backend API
+                const mockData = {
+                    "MJ774116330": {
+                        status: "In Transit",
+                        lastUpdate: "2023-10-27 10:30 AM - Departed from Hub XYZ",
+                        estimatedDelivery: "2023-10-29",
+                        history: [
+                            "2023-10-27 10:30 AM: Departed from Hub XYZ",
+                            "2023-10-26 08:00 PM: Arrived at Hub XYZ",
+                            "2023-10-26 02:00 PM: Picked up from sender"
+                        ]
+                    },
+                    "LP987654321": {
+                        status: "Delivered",
+                        lastUpdate: "2023-10-25 02:15 PM - Delivered to recipient",
+                        estimatedDelivery: "2023-10-25",
+                        history: [
+                            "2023-10-25 02:15 PM: Delivered to recipient",
+                            "2023-10-25 09:00 AM: Out for delivery",
+                            "2023-10-24 05:00 PM: Arrived at local facility"
+                        ]
+                    }
+                };
+
+                const result = mockData[trackingId];
+
+                if (result) {
+                    document.getElementById('resultTrackingId').textContent = trackingId;
+                    document.getElementById('resultStatus').textContent = result.status;
+                    document.getElementById('resultLastUpdate').textContent = result.lastUpdate;
+                    document.getElementById('resultEstDelivery').textContent = result.estimatedDelivery;
+
+                    const historyList = document.getElementById('resultHistory');
+                    historyList.innerHTML = ''; // Clear previous history
+                    result.history.forEach(item => {
+                        const li = document.createElement('li');
+                        li.textContent = item;
+                        historyList.appendChild(li);
+                    });
+
+                    trackingResultsDiv.classList.remove('hidden');
+                } else {
+                    trackingErrorDiv.classList.remove('hidden');
+                }
+            }, 1500); // Simulate API delay
+        });
+    }
+
 });
